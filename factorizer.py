@@ -42,7 +42,7 @@ while True:
 		print("-1, ", sep='', end='')
 	for i in range(len(allFactorsList)-1):
 		print(str(allFactorsList[i]) + ", ", sep='', end='')
-	print(allFactorsList[len(allFactorsList)-1])
+	print(allFactorsList[-1])
 
 	# get list of all prime factors
 	#divisor = 2
@@ -51,7 +51,7 @@ while True:
 		primeFactorsAmountList.append(0)
 		while (number % 2 == 0) and (number != 1):
 			number /= 2
-			primeFactorsAmountList[len(primeFactorsAmountList)-1] += 1
+			primeFactorsAmountList[-1] += 1
 
 	divisor = 3
 	while number != 1:
@@ -60,12 +60,14 @@ while True:
 			primeFactorsAmountList.append(0)
 			while (number % divisor == 0) and (number != 1):
 				number /= divisor
-				primeFactorsAmountList[len(primeFactorsAmountList)-1] += 1
+				primeFactorsAmountList[-1] += 1
 		divisor += 2
 
 	if isNegative:
 		print("-1 * ", sep='', end='')
 	for i in range(len(primeFactorsList)-1):
 		print(str(primeFactorsList[i]) + "^" + str(primeFactorsAmountList[i]) + " * ", sep='', end='')
-	print(str(primeFactorsList[len(primeFactorsList)-1]) + "^" + str(primeFactorsAmountList[len(primeFactorsAmountList)-1]))
+	print(str(primeFactorsList[-1]) + "^" + str(primeFactorsAmountList[-1]))
+
+	print()
 	
